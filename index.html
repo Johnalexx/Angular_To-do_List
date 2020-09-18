@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Angular To-do list</title>
+
+        <script src="angular.min.js"></script>
+        <script src="app.js"></script>
+        
+        <link rel="icon" href="images/t0d0.jpg">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+     <body ng-app="myApp" ng-controller="todoCtrl">
+        <div class="container">
+            <h2>Johnalex Todo List</h2>
+            <span><i> todo list created using angularjs</i></span>
+            <!-- Button to Add item to list -->
+            <form ng-submit="todoAdd()">
+                <input type="text" ng-model="todoInput" size="50" placeholder="Add New">
+                <input type="submit" value="Add New Item">
+            </form>
+            <br>
+            <!-- field that show to-dos -->
+            <div ng-repeat="x in todoList">
+                <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText" id="lists"></span>
+            </div>
+            <!-- Button to remove Marked items -->
+            <p><button ng-click="remove()">Remove marked</button></p>
+        </div>
+
+        </body>
+</html>
